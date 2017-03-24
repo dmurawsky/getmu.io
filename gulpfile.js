@@ -38,6 +38,15 @@ gulp.task('minify-js', function() {
         }))
 });
 
+// Copy static artifacts to /dist
+gulp.task('static', function() {
+    gulp.src(['img/**/*'])
+        .pipe(gulp.dest('dist/img'))
+    
+    gulp.src(['index.html','favicon.ico'])
+        .pipe(gulp.dest('dist/'))
+});
+    
 // Copy lib libraries from /node_modules into /lib
 gulp.task('copy', function() {
     gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
@@ -62,23 +71,23 @@ gulp.task('copy', function() {
 })
 
 // Run everything
-gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy', 'static']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: ''
+            baseDir: 'dist'
         },
     })
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() {
-    gulp.watch('less/*.less', ['less']);
-    gulp.watch('css/*.css', ['minify-css']);
+gulp.task('dev', ['browserSync', 'default'], function() {
+    gulp.watch('*.html', ['static']);
     gulp.watch('js/*.js', ['minify-js']);
+    gulp.watch('less/*.less', ['less']);
+    gulp.watch('dist/css/*.css', ['minify-css']);
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('*.html', browserSync.reload);
-    gulp.watch('js/**/*.js', browserSync.reload);
+    gulp.watch('dist/**/*', browserSync.reload);
 });

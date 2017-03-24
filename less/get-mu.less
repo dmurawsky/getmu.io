@@ -209,7 +209,7 @@ section {
     }
 }
 
-section.download {
+section.intro {
     padding: 150px 0;
     position: relative;
     h2 {
@@ -240,11 +240,14 @@ section.download {
 }
 
 section.features {
+    background: @gray-dark;
     .section-heading {
         h2 {
+            color: white;
             margin-top: 0;
         }
         p {
+            color: white;
             margin-bottom: 0;
         }
         margin-bottom: 100px;
@@ -263,8 +266,12 @@ section.features {
     .feature-item {
         text-align: center;
         margin-bottom: 100px;
+        p {
+            color: white;
+        }
         h3 {
             font-size: 30px;
+            color: white;
         }
         i {
             font-size: 80px;
@@ -282,32 +289,21 @@ section.features {
     }
 }
 
-section.cta {
+section.start {
     position: relative;
     .background-cover;
-    background-position: center;
-    background-image: url('../img/bg-cta.jpg');
-    padding: 250px 0;
-    .cta-content {
+    .start-content {
         position: relative;
         z-index: 1;
         h2 {
             margin-top: 0;
-            margin-bottom: 25px;
-            color: white;
             max-width: 450px;
             font-size: 50px;
-        }
-        @media (min-width: 768px) {
-            h2 {
-                font-size: 80px;
-            }
         }
     }
     .overlay {
         height: 100%;
         width: 100%;
-        background-color: fade(black, 50%);
         position: absolute;
         top: 0;
         left: 0;
@@ -315,51 +311,12 @@ section.cta {
 }
 
 section.contact {
+    background-color: @brand-stelligent;
+    color: white;
     text-align: center;
     h2 {
         margin-top: 0;
         margin-bottom: 25px;
-        i {
-            color: @brand-google-plus;
-        }
-    }
-    ul.list-social {
-        margin-bottom: 0;
-        li {
-            a {
-                display: block;
-                height: 80px;
-                width: 80px;
-                line-height: 80px;
-                font-size: 40px;
-                border-radius: 100%;
-                color: white;
-            }
-            &.social-twitter {
-                a {
-                    background-color: @brand-twitter;
-                    &:hover {
-                        background-color: darken(@brand-twitter, 5%);
-                    }
-                }
-            }
-            &.social-facebook {
-                a {
-                    background-color: @brand-facebook;
-                    &:hover {
-                        background-color: darken(@brand-facebook, 5%);
-                    }
-                }
-            }
-            &.social-google-plus {
-                a {
-                    background-color: @brand-google-plus;
-                    &:hover {
-                        background-color: darken(@brand-google-plus, 5%);
-                    }
-                }
-            }
-        }
     }
 }
 
