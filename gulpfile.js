@@ -43,9 +43,9 @@ gulp.task('minify-js', function() {
 // Copy static artifacts to /dist
 gulp.task('static', function() {
     gulp.src(['img/**/*'])
-        .pipe(gulp.dest('dist/img'))
+        .pipe(gulp.dest('dist/img'));
     
-    gulp.src(['index.html','favicon.ico'])
+    gulp.src(['index.html','favicon.ico','install.sh'])
         .pipe(gulp.dest('dist/'))
 });
     
