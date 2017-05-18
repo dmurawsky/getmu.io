@@ -13,7 +13,7 @@ environments:
       hostedzone: getmu.io
 
 service:
-  name: getmu.io
+  name: getmu-io
   healthEndpoint: /
   port: 80
   pathPatterns:
