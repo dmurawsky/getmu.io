@@ -5,7 +5,6 @@ var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
-var s3 = require('gulp-s3-upload')({});
 
 
 // Compile LESS files from /less into /css
@@ -95,15 +94,3 @@ gulp.task('dev', ['browserSync', 'default'], function() {
 });
 
 
-// Deploy
-gulp.task("deploy", ['default'], function() {
-    gulp.src("./dist/**")
-        .pipe(s3({
-            Bucket: 'getmu.io', //  Required
-            ACL:    'public-read'       //  Needs to be user-defined
-        }, {
-            // S3 Constructor Options, ie:
-            maxRetries: 5
-        }))
-    ;
-});

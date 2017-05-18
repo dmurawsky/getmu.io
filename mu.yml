@@ -6,11 +6,13 @@ environments:
       maxSize: 1
     loadbalancer:
       hostedzone: getmu.io
+      name: dev
   - name: mu-prod
     cluster:
       maxSize: 1
     loadbalancer:
       hostedzone: getmu.io
+      name: prod
 
 service:
   name: getmu-io
