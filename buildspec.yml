@@ -6,7 +6,7 @@ phases:
       - npm install
   build:
     commands:
-      - gulp
+      - $(npm bin)/gulp
 
 artifacts:
   files:
