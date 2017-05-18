@@ -4,12 +4,12 @@ environments:
   - name: mu-dev
     cluster:
       maxSize: 1
-    loadBalancer:
+    loadbalancer:
       hostedzone: getmu.io
   - name: mu-prod
     cluster:
       maxSize: 1
-    loadBalancer:
+    loadbalancer:
       hostedzone: getmu.io
 
 service:
