@@ -1,0 +1,30 @@
+---
+
+environments:
+  - name: mu-dev
+    cluster:
+      maxSize: 1
+    loadBalancer:
+      hostedzone: getmu.io
+  - name: mu-prod
+    cluster:
+      maxSize: 1
+    loadBalancer:
+      hostedzone: getmu.io
+
+service:
+  name: getmu.io
+  healthEndpoint: /
+  port: 80
+  pathPatterns:
+    - /*
+  pipeline:
+    source:
+      repo: stelligent/getmu.io
+    build:
+      image:
+    acceptance:
+      environment: mu-dev
+    production:
+      environment: mu-prod
+
