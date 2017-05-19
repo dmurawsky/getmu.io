@@ -28,6 +28,9 @@
         }
     })
 
-    $('.lazy').Lazy();
+    var instance = $('.lazy').lazy({
+        chainable: false
+    });
+    instance.loadAll();
 
 })(jQuery); // End of use strict
