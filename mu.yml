@@ -7,12 +7,14 @@ environments:
     loadbalancer:
       hostedzone: getmu.io
       name: dev
+      certificate: arn:aws:acm:us-west-2:923120264911:certificate/56fd77d1-8e41-4a8c-a9db-f6b90fa01cd7
   - name: mu-prod
     cluster:
       maxSize: 1
     loadbalancer:
       hostedzone: getmu.io
       name: prod
+      certificate: arn:aws:acm:us-west-2:923120264911:certificate/56fd77d1-8e41-4a8c-a9db-f6b90fa01cd7
 
 service:
   name: getmu-io
