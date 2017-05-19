@@ -50,6 +50,9 @@ gulp.task('static', function() {
     
 // Copy lib libraries from /node_modules into /lib
 gulp.task('copy', function() {
+    gulp.src(['node_modules/jquery-lazy/*.min.js'])
+        .pipe(gulp.dest('dist/lib/jquery-lazy'))
+
     gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
         .pipe(gulp.dest('dist/lib/bootstrap'))
 
